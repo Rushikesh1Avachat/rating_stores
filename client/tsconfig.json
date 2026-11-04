@@ -1,0 +1,7 @@
+{
+  "extends": "../server/tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.client.tsbuildinfo"
+  },
+  "include": ["src", "vite.config.ts"]
+}

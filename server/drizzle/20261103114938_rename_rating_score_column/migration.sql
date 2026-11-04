@@ -1,0 +1,2 @@
+ALTER TABLE "ratings" RENAME COLUMN "score" TO "rating";--> statement-breakpoint
+ALTER TABLE "ratings" DROP CONSTRAINT "ratings_score_range", ADD CONSTRAINT "ratings_score_range" CHECK ("rating" BETWEEN 1 AND 5);
