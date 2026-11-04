@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --watch . --ext ts --exec tsx index.ts",
-    "build": "tsc -p tsconfig.server.json && tsc -b",
+    "build": "tsc -p tsconfig.server.json",
     "test": "tsx --test validation.test.ts public-data.test.ts",
     "start": "tsx index.ts",
     "db:generate": "drizzle-kit generate",
