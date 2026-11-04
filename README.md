@@ -35,6 +35,12 @@ Install dependencies from both `server/` and `client/` directories with `npm ins
 9. Start the API in one terminal from `server/` with `npm run dev`.
 10. Start the frontend in another terminal from `client/` with `npm run dev`. The app is at `http://localhost:5173`.
 
+## Deployment
+
+Deploy the frontend and API as separate services. For Vercel, set the project's **Root Directory** to `client`, use `npm run build` as the build command, and set **Output Directory** to `dist`. Vite writes the production files to `client/dist`.
+
+Deploy `server/` to a Node.js host that runs the Express process, and configure its database and authentication environment variables there. In the Vercel project, set `VITE_API_BASE_URL` to the deployed API base URL including `/api` (for example, `https://your-api-host.example/api`) and redeploy. Without this setting, the frontend uses `/api`, which is intended for local development through Vite's proxy.
+
 The catalog import is optional. Public records are stored in PostgreSQL, not fetched as the permanent runtime data source. OpenStreetMap and Open Food Facts data are available under the Open Database License (ODbL); source attribution is shown in the catalog.
 
 ### Demo access and data provenance

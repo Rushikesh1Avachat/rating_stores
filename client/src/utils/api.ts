@@ -1,4 +1,4 @@
-const API = "/api";
+const API = (import.meta.env.VITE_API_BASE_URL ?? "/api").replace(/\/+$/, "");
 const TOKEN_KEY = "goodmark-token";
 const SESSION_EXPIRED_EVENT = "goodmark:session-expired";
 
