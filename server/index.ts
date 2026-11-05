@@ -12,9 +12,15 @@ import { z } from "zod";
 import db, { pool } from "./db.js";
 
 const app = express();
+const allowedFrontendOrigins = new Set(
+  (process.env.FRONTEND_URL ?? "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+);
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true
+  origin: (origin, callback) => callback(null, !origin || allowedFrontendOrigins.has(origin)),
+  credentials: true,
 }));
 app.use(express.json({ limit: "32kb" }));
 
