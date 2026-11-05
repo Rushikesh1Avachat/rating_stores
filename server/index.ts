@@ -753,7 +753,7 @@ app.use((error: unknown, _req: express.Request, res: express.Response, _next: ex
 });
 
 const port = Number(process.env.PORT ?? 3000);
-const server = app.listen(port, "127.0.0.1", () => console.log(`Goodmark API listening on http://localhost:${port}`));
+const server = app.listen(port, "0.0.0.0", () => console.log(`Goodmark API listening on port ${port}`));
 
 for (const signal of ["SIGINT", "SIGTERM"] as const) {
   process.on(signal, () => server.close(async () => {
