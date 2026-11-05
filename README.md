@@ -1,4 +1,9 @@
-            # Goodmark
+
+ Goodmark
+            
+            Github Link--https://github.com/Rushikesh1Avachat/rating_stores
+Render Link-https://rating-stores-2.onrender.com
+Vercel Link-https://rating-stores-d6vh-j3f80g22u.vercel.app
 
 A full-stack store-rating application with a Vite/React frontend, Express API, PostgreSQL, and Drizzle ORM. Users share one sign-in system; permissions and dashboards are based on their account role.
 
